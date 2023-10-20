@@ -8,13 +8,13 @@ type Blog = {
 const blogs: Blog[] = [
   {
     title: "Blog Intro",
-    date: "10-18-2023",
+    date: "2023-10-18",
     description: "This is my intro to my blog on this website.",
     slug: "./blogIntro.html",
   },
   {
     title: "First Blog",
-    date: "10-18-2023",
+    date: "2023-10-18",
     description: "This is my first blog on this website.",
     slug: "./firstBlog.html",
   },
@@ -25,9 +25,13 @@ function displayBlogPosts() {
   blogs.sort((a,b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
-
-  const container = document.getElementById("container");
+  console.log(document.documentElement.childNodes);
+  const container = document.getElementById("blogpost-container");
+  //const container = document.querySelector(".blogpost-container");
+  //const container = document.querySelector(".navbar");
+  console.log(container);
   blogs.forEach(({ title, date, description, slug }) => {
+    console.log("here");
     const link = document.createElement("a");
     link.href = slug;
     const divPost = document.createElement("div");
@@ -39,6 +43,7 @@ function displayBlogPosts() {
     `;
     divPost.appendChild(link);
     if (container) {
+      console.log("inside if");
       container.appendChild(divPost);
     }
   });
