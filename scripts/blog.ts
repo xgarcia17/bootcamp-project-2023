@@ -10,32 +10,38 @@ const blogs: Blog[] = [
     title: "Blog Intro",
     date: "10-18-2023",
     description: "This is my intro to my blog on this website.",
-    slug: "../blogIntro.html",
+    slug: "./blogIntro.html",
   },
   {
     title: "First Blog",
     date: "10-18-2023",
     description: "This is my first blog on this website.",
-    slug: "../firstBlog.html",
+    slug: "./firstBlog.html",
   },
 ];
 
-function iterateOverBlogs() {
-  const container = document.getElementById("container");
-  //console.log("we're starting!");
-  for (let i=0; i<blogs.length; i++) {
-    //console.log("here we are" + i);
-    const p = document.createElement("div");
-    //p.classList.add("blogpost");
-    //const blogpost = p.getElementsByClassName("blogpost")[0];
+function displayBlogPosts() {
+  // Sort the blogs by their preview dates
+  blogs.sort((a,b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
 
-    p.title = blogs[i].title;
-    p.textContent = blogs[i].date;
-    p.innerText = blogs[i].description;
-    p.innerHTML = blogs[i].slug;
-    //console.log(p);
-    container?.appendChild(p);
-  }
+  const container = document.getElementById("container");
+  blogs.forEach(({ title, date, description, slug }) => {
+    const link = document.createElement("a");
+    link.href = slug;
+    const divPost = document.createElement("div");
+    divPost.classList.add("post-preview");
+    divPost.innerHTML = `
+      <h2 class="post-title">${title}</h2>
+      <h3 class="post-subtitle">${date}</h3>
+      <p class="post-description">${description}</p>
+    `;
+    divPost.appendChild(link);
+    if (container) {
+      container.appendChild(divPost);
+    }
+  });
 }
 
-iterateOverBlogs();
+displayBlogPosts();
