@@ -27,6 +27,7 @@ function displayBlogPosts() {
         console.log("here");
         var link = document.createElement("a");
         link.href = slug;
+        link.text = "click here to read";
         var divPost = document.createElement("div");
         divPost.classList.add("post-preview");
         divPost.innerHTML = "\n      <h2 class=\"post-title\">".concat(title, "</h2>\n      <h3 class=\"post-subtitle\">").concat(date, "</h3>\n      <p class=\"post-description\">").concat(description, "</p>\n    ");

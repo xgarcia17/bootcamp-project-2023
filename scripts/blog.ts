@@ -34,6 +34,7 @@ function displayBlogPosts() {
     console.log("here");
     const link = document.createElement("a");
     link.href = slug;
+    link.text = "click here to read";
     const divPost = document.createElement("div");
     divPost.classList.add("post-preview");
     divPost.innerHTML = `
