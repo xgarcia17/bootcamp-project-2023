@@ -118,6 +118,10 @@ main {
   /* border: 2px solid blue; */
 }
 
+.project-description {
+  font-size: 1.15em;
+}
+
 .item-link {
   width: 70%;
 
@@ -219,6 +223,7 @@ main {
 .about-text p {
   font-size: 16px;
   line-height: 1.5;
+  font-size: 1.5em;
 }
 
 /* CSS for resume page */
@@ -244,6 +249,7 @@ main {
   margin-bottom: 10px;
   border-radius: 10px;
   border: 5px solid var(--cg-grey-green);
+  font-size: 1.1em;
 }
 
 .resume h3, p {
@@ -265,6 +271,10 @@ main {
 
 .resume h2 {
   font-family: Georgia;
+}
+
+.resume-download {
+  font-size: 1.2em;
 }
 
 /* CSS for contact form */
@@ -297,6 +307,10 @@ form {
 }
 
 /* CSS for Blogs */
+
+#blogpost-container {
+  font-size: 1.35em;
+}
 
 .post-title {
   margin-bottom: -10px;
@@ -337,15 +351,17 @@ form {
 }
 
 .blogpost {
+  font-size: 1.5em;
   background-color: var(--cg-egg-green);
   flex: 1;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 80px;
   margin-bottom: 20px;
   border-radius: 10px;
   border: 5px solid var(--cg-grey-green);
   padding-bottom: 20px;
+
 }
 
 /* CSS for footer */
