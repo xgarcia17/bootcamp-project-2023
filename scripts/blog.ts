@@ -25,14 +25,10 @@ function displayBlogPosts() {
   blogs.sort((a,b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
-  console.log(document.documentElement.childNodes);
   const container = document.getElementById("blogpost-container");
-  //const container = document.querySelector(".blogpost-container");
-  //const container = document.querySelector(".navbar");
-  console.log(container);
   blogs.forEach(({ title, date, description, slug }) => {
-    console.log("here");
     const link = document.createElement("a");
+    link.classList.add("read-link-prompt");
     link.href = slug;
     link.text = "click here to read";
     const divPost = document.createElement("div");
@@ -44,7 +40,6 @@ function displayBlogPosts() {
     `;
     divPost.appendChild(link);
     if (container) {
-      console.log("inside if");
       container.appendChild(divPost);
     }
   });

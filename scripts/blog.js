@@ -17,15 +17,11 @@ function displayBlogPosts() {
     blogs.sort(function (a, b) {
         return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
-    console.log(document.documentElement.childNodes);
     var container = document.getElementById("blogpost-container");
-    //const container = document.querySelector(".blogpost-container");
-    //const container = document.querySelector(".navbar");
-    console.log(container);
     blogs.forEach(function (_a) {
         var title = _a.title, date = _a.date, description = _a.description, slug = _a.slug;
-        console.log("here");
         var link = document.createElement("a");
+        link.classList.add("read-link-prompt");
         link.href = slug;
         link.text = "click here to read";
         var divPost = document.createElement("div");
@@ -33,7 +29,6 @@ function displayBlogPosts() {
         divPost.innerHTML = "\n      <h2 class=\"post-title\">".concat(title, "</h2>\n      <h3 class=\"post-subtitle\">").concat(date, "</h3>\n      <p class=\"post-description\">").concat(description, "</p>\n    ");
         divPost.appendChild(link);
         if (container) {
-            console.log("inside if");
             container.appendChild(divPost);
         }
     });
