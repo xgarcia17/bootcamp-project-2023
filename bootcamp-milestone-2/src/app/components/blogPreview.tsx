@@ -2,7 +2,6 @@ import React from 'react';
 import type {Blog} from '../blogData'
 import style from './blogPreview.module.css'
 import '../globals.css'
-import Image from 'next/image'
 import Link from 'next/link'
 
 
@@ -20,7 +19,6 @@ export default function BlogPreview(props: Blog) {
                     <h3 className={style.posttitle}>{props.title}</h3>
                     <p className={style.postsubtitle}>{props.date}</p>
                     <div>
-                        <Image className={style.aboutimage} src={props.image} alt="img" width={props.imageWidth} height={props.imageHeight}></Image>
                         <p className={style.postdescription}>{props.description}</p>
                         <Link className={style.readlinkprompt} href={props.slug}>Click here to read</Link>
                     </div>
