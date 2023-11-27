@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link"
 import Image from "next/image"
 import connectDB from "../../helpers/db";
-import blogSchema from "../../database/blogSchema"
-import style from "../components/blogPreview.module.css";
-import '../globals.css'
+import Blog from "../../database/blogSchema"
+import style from "../../components/blogPreview.module.css";
+import '../../globals.css'
 import { NextRequest, NextResponse } from 'next/server'
 
 type IParams = {
@@ -14,17 +14,62 @@ type IParams = {
 }
 
 
-export async function GET(req: NextRequest, { params }: IParams) {
-    await connectDB() // function from db.ts before
-		const { slug } = params // another destructure
 
-	   try {
-	        const blog = await blogSchema.findOne({ slug }).orFail()
-	        return NextResponse.json(blog)
-	    } catch (err) {
-	        return NextResponse.json('Blog not found.', { status: 404 })
-	    }
+async function getBlogPosts(slug: string){
+	await connectDB()
+
+	try {
+      const blogPost = await Blog.findOne({ slug }).orFail()
+	    return blogPost
+	} catch (err) {
+      console.error("Error Getting Data From DB: ", err);
+	    return null
+	}
 }
+
+
+async function BlogPost ({ params }: { params: { slug: string } }) {
+	const blogPost = await getBlogPosts(params.slug);
+  
+	if (!blogPost) {
+	  return <p>The blog post was not found</p>;
+	}
+  
+	let dateString = String(blogPost.date)
+	//dateString.split()
+  
+	return (
+		<>
+		<div className={style.blogpost}>  
+			<div className={style.blogpostcontainer}>
+				<h3 className={style.posttitle}>{blogPost.title}</h3>
+				<p className={style.postsubtitle}>{String(blogPost.date)}</p>
+				<br/>
+				<p className={style.postcontent}>{blogPost.content}</p>
+			</div>
+		</div>
+		<footer className="footer">
+                © 2023 Xavier's Personal Website | All Rights Reserved
+            </footer>
+	  </>
+	);
+  };
+  
+  export default BlogPost;
+
+
+
+// export async function GET(req: NextRequest, { params }: IParams) {
+//     await connectDB() // function from db.ts before
+// 		const { slug } = params // another destructure
+
+// 	   try {
+// 	        const blog = await Blog.findOne({ slug }).orFail()
+// 	        return NextResponse.json(blog)
+// 	    } catch (err) {
+// 	        return NextResponse.json('Blog not found.', { status: 404 })
+// 	    }
+// }
 
 
 /* 

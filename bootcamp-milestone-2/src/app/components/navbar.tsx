@@ -9,13 +9,13 @@ export default function Navbar() {
     //<h1> Xavier's Personal Website </h1>
     <header className={style.navbar} >
       <nav>
-        <h1 className={style.logo}><Link href=".">Xavier's Personal Website</Link></h1>
+        <h1 className={style.logo}><Link href="http://localhost:3000/">Xavier's Personal Website</Link></h1>
             <ul className={style.navlist}>
-                <Link href=".">Home</Link>
-                <Link href="blog">Blogs</Link>
-                <Link href="portfolio">Portfolio</Link>
-                <Link href="resume">Resume</Link>
-                <Link href="contact">Contact</Link>
+                <Link href="http://localhost:3000/">Home</Link>
+                <Link href="http://localhost:3000/blog">Blogs</Link>
+                <Link href="http://localhost:3000/portfolio">Portfolio</Link>
+                <Link href="http://localhost:3000/resume">Resume</Link>
+                <Link href="http://localhost:3000/contact">Contact</Link>
             </ul>
       </nav>
     </header>

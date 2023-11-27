@@ -28,6 +28,15 @@
     */
     margin-bottom: 5px;
   }
+
+  .postcontent {
+    /*margin-left: 25px;
+    margin-right: 25px;
+    */
+    font-size: 1.05em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
 /*
   .readlinkprompt {
     
@@ -43,6 +52,7 @@
   }
   
   .postpreview {
+    margin-top: 50px;
     align-items: center;
     background-color: var(--cg-egg-green);
     flex: 1;

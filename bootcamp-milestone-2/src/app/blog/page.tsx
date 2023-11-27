@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link"
 import connectDB from "../helpers/db";
-import blogSchema from "../database/blogSchema"
+import Blog from "../database/blogSchema"
 import style from "../components/blogPreview.module.css";
 import '../globals.css'
 
@@ -17,7 +17,7 @@ async function getBlogs(){
 
 	try {
 			// query for all blogs and sort by date
-	    const blogs = await blogSchema.find().sort({ date: -1 }).orFail();
+	    const blogs = await Blog.find().sort({ date: -1 }).orFail();
       //const blogs = await blogSchema.find({}).orFail();
 
 			// send a response as the blogs as the message
@@ -43,7 +43,7 @@ export default async function Blogs() {
               <div className={style.postpreview}>  
                   <div className={style.blogpostcontainer}>
                       <h3 className={style.posttitle}>{blog.title}</h3>
-                      <p className={style.postsubtitle}>{blog.date}</p>
+                      <p className={style.postsubtitle}>{String(blog.date)}</p>
                       <div>
                           <p className={style.postdescription}>{blog.description}</p>
                           <Link className={style.readlinkprompt} href={"/blog/" + blog.slug}>Click here to read</Link>
@@ -53,6 +53,9 @@ export default async function Blogs() {
             </>
           )
         )}
+        <footer className="footer">
+                © 2023 Xavier's Personal Website | All Rights Reserved
+            </footer>
       </>
     );
   }

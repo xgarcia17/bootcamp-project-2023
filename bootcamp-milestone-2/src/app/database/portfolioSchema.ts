@@ -1,30 +1,33 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
-type IComment = {
-    user: string;
-    comment: string;
-    time: Date;
-}
+// type IComment = {
+//     user: string;
+//     comment: string;
+//     time: Date;
+// }
 
 // typescript type (can also be an interface)
-type IBlog = {
+type Portfolio = {
     title: string;
-  slug: string; 
-    date: Date;
-    description: string; // for preview
-  content: string; // for individual blog page
+    slug: string; 
+    content: string; // for individual portfolio page
+    image: string;
+    width: string;
+    height: string;
     //comments: IComment[]; // array for comments
 };
 
 
 // mongoose schema 
-const blogSchema = new Schema<IBlog>({
+const portfolioSchema = new Schema<Portfolio>({
     title: { type: String, required: true },
     slug: { type: String, required: true },
-    date: { type: Date, required: false, default: new Date()},
-    description: { type: String, required: true },
     content: { type: String, required: true },
+    image: { type: String, required: true },
+    width: { type: String, required: true},
+    height: { type: String, required: true},
+
 // comments: {
 //     user: {type: String, required: true},
 //     comment: {type: String, required: true},
@@ -33,7 +36,7 @@ const blogSchema = new Schema<IBlog>({
 })
 
 // defining the collection and model
-const Blog = mongoose.models['Blogs'] ||
-mongoose.model('Blogs', blogSchema);
+const Portfolio = mongoose.models['Portfolios'] ||
+mongoose.model('Portfolios', portfolioSchema);
 
-export default Blog;
+export default Portfolio;
