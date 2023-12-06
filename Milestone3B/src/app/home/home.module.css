@@ -1,0 +1,46 @@
+
+/*main {
+    padding: 0 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+*/
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--cg-egg-green);
+    border: 5px solid var(--cg-grey-green);
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .aboutimage img {
+    max-width: 300px;
+    border-radius: 3px;
+  }
+  
+  .aboutimage :hover {
+    transform: scale(1.009);
+  }
+  
+  .abouttext {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .abouttext h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .abouttext p {
+    font-size: 16px;
+    line-height: 1.5;
+    font-size: 1.5em;
+  }
