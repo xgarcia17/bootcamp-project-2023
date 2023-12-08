@@ -7,7 +7,7 @@ import '../globals.css'
 
 //<a className={style.resumedownload} href="../../public/resume.pdf" download>Download Resume</a>
 export default function Resume() {
-    return (<div>
+    return (<div className='pageFormatting'>
             <main>
             <h1 className="page-title">Resume</h1>
             <Link download="resume.pdf" target="_blank" href={"./resume.pdf"}>Download Resume</Link>        
@@ -92,9 +92,5 @@ export default function Resume() {
                 </section>
             </div>
         </main>
-        <footer className="footer">
-                © 2023 Xavier's Personal Website | All Rights Reserved
-            </footer>
-
         </div>) 
   }

@@ -121,6 +121,10 @@
     justify-content: center;
     align-items: center;
   }
+
+  .pageFormatting {
+    padding-bottom: 50px;
+  }
   
   .page-title {
     display: flex;

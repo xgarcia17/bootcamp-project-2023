@@ -38,7 +38,7 @@ export default async function Portfolios() {
       );
     }
     return(
-      <>
+      <div className='pageFormatting'>
       <h1 className="page-title">Portfolio</h1>
         {portfolios.map((portfolio) => (
             <>
@@ -51,10 +51,10 @@ export default async function Portfolios() {
             </>
           )
         )}
-        <footer className="footer">
+        {/* <footer className="footer">
                 © 2023 Xavier's Personal Website | All Rights Reserved
-            </footer>
-      </>
+            </footer> */}
+      </div>
     );
   }
 

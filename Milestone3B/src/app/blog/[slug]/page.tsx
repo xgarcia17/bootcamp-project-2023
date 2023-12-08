@@ -4,39 +4,22 @@ import Image from "next/image"
 import connectDB from "../../helpers/db";
 import Blog from "../../database/blogSchema"
 import style from "../../components/blogPreview.module.css";
-import '../../globals.css'
-import { NextRequest, NextResponse } from 'next/server'
+import commentStyle from "../../components/comments.module.css"
+import '../../globals.css';
+import Comment from "../../components/comments";
+import moment from 'moment';
+import { NextRequest, NextResponse } from 'next/server';
 
 type IParams = {
 		params: {
-			slug: string
-		}
-}
-
-
-
-async function getBlog(slug: string) {
-	try {
-		const res = await fetch(`http://localhost:3000/api/blog/{slug}`, {
-			cache: "no-store",	
-		})
-
-		if (!res.ok) {
-			throw new Error("Failed to fetch blog");
-		}
-
-		return res.json();
-	} catch (err: unknown) {
-		console.log(`error: ${err}`);
-		return null;
-	}
+			slug: string;
+		};
 }
 
 
 
 async function getBlogPosts(slug: string){
 	await connectDB()
-
 	try {
       const blogPost = await Blog.findOne({ slug }).orFail()
 	    return blogPost
@@ -47,31 +30,40 @@ async function getBlogPosts(slug: string){
 }
 
 
+// convert Date into readable words
+function parseDateTime(time: Date){
+	return moment(time).format('MMMM Do YYYY, h:mm:ss a');
+}
+
+
 async function BlogPost ({ params }: { params: { slug: string } }) {
-	const blogPost = await getBlog(params.slug);
-	// const blogPost = await getBlogPosts(params.slug);
+	const blogPost = await getBlogPosts(params.slug);
   
 	if (!blogPost) {
 	  return <p>The blog post was not found</p>;
 	}
-  
-	let dateString = String(blogPost.date)
-	//dateString.split()
-  
 	return (
-		<>
+		<div className="pageFormatting">
 		<div className={style.blogpost}>  
 			<div className={style.blogpostcontainer}>
 				<h3 className={style.posttitle}>{blogPost.title}</h3>
-				<p className={style.postsubtitle}>{String(blogPost.date)}</p>
+				<em className={style.postsubtitle}>{parseDateTime(blogPost.date)}</em>
 				<br/>
 				<p className={style.postcontent}>{blogPost.content}</p>
 			</div>
 		</div>
-		<footer className="footer">
-                © 2023 Xavier's Personal Website | All Rights Reserved
-            </footer>
-	  </>
+		
+		<div className={commentStyle.commentBlock}>
+			<strong>Comments</strong>
+			{blogPost.comments.map((comment: { user: string; comment: string; time: Date; }, index: React.Key | null | undefined) => (
+	            <Comment key={index} comment={comment} />
+	        ))}
+		</div>
+			
+		{/* <footer className="footer">
+            © 2023 Xavier's Personal Website | All Rights Reserved
+        </footer> */}
+	  </div>
 	);
   };
   

@@ -9,8 +9,7 @@ import Image from 'next/image'
 
 
 export default function Home() {
-  return (<div>
-                
+  return (<div>  
 			<h2 className="page-title">Xavier Garcia</h2>
             <div className={style.about}>
                 <div className={style.aboutimage}>
@@ -24,9 +23,9 @@ export default function Home() {
                     skills the rest of my time at Cal Poly.</p> 
                 </div>
             </div>
-            <footer className="footer">
+            {/* <footer className="footer">
                 © 2023 Xavier's Personal Website | All Rights Reserved
-            </footer>
+            </footer> */}
 		</div>
         ) 
 }

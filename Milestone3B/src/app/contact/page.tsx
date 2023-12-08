@@ -1,7 +1,7 @@
 import '../globals.css'
 
 export default function Contact() {
-    return (<div>
+    return (<div className='pageFormatting'>
               <h1 className="page-title">Contact</h1>
             <form id="contact-form">
                 <label htmlFor="name">Name:</label>
@@ -13,9 +13,9 @@ export default function Contact() {
                 <input type="submit" id="submit"/>
 
             </form>
-            <footer className="footer">
+            {/* <footer className="footer">
                 © 2023 Xavier's Personal Website | All Rights Reserved
-            </footer>
+            </footer> */}
           </div>
           ) 
   }
