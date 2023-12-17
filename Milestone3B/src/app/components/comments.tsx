@@ -29,7 +29,9 @@ function parseCommentTime(time: Date){
 }
 
 
-function Comment({ comment }: CommentProps) {
+function Comment({comment}: CommentProps) {
+// function Comment(comment: IComment) {
+
     return (
         <div className={style.commentPostBlock}>
         <div className={style.commentPost}>

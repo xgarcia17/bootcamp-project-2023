@@ -16,6 +16,12 @@ type IParams = {
 		};
 }
 
+type IComment = {
+    user: string;
+    comment: string;
+    time: Date;
+}
+
 
 
 async function getBlogPosts(slug: string){
@@ -54,8 +60,8 @@ async function BlogPost ({ params }: { params: { slug: string } }) {
 		</div>
 		<div className={commentStyle.commentBlock}>
 			<strong>Comments</strong>
-			{blogPost.comments.map((comment: { user: string; comment: string; time: Date; }, index: React.Key | null | undefined) => (
-	            <Comment key={index} comment={comment} />
+			{blogPost.comments.map((icomment: IComment /*{ user: string; comment: string; time: Date; }*/, index: React.Key | null | undefined) => (
+	            <Comment key={index} comment = {icomment}/>
 	        ))}
 		</div>
 	  </div>
