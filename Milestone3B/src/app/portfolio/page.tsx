@@ -51,9 +51,6 @@ export default async function Portfolios() {
             </>
           )
         )}
-        {/* <footer className="footer">
-                © 2023 Xavier's Personal Website | All Rights Reserved
-            </footer> */}
       </div>
     );
   }

@@ -13,9 +13,6 @@ export default function Contact() {
                 <input type="submit" id="submit"/>
 
             </form>
-            {/* <footer className="footer">
-                © 2023 Xavier's Personal Website | All Rights Reserved
-            </footer> */}
           </div>
           ) 
   }

@@ -43,9 +43,6 @@ return (
         <p className={style.projectdescription}>{project.content}</p>
         </div>
     </div>
-    <footer className="footer">
-        © 2023 Xavier's Personal Website | All Rights Reserved
-    </footer>
   </>
 );
 };

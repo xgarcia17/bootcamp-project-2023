@@ -61,22 +61,6 @@ export default async function Blogs() {
             </>
           )
         )}
-        {/* <footer className="footer">
-          © 2023 Xavier's Personal Website | All Rights Reserved
-        </footer> */}
       </div>
     );
   }
-
-
-// export async function GET(req: NextRequest, {params}: Params) {
-//     const {slug} = params;
-//     await connectDB();
-//     try {
-//         const blog = blogSchema.findOne({slug}).orFail();
-//         return NextResponse.json(blog);
-//     }
-//     catch {
-//         return NextResponse.json("No Blog Found.", {status: 501});
-//     }
-// }

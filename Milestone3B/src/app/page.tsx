@@ -23,9 +23,6 @@ export default function Home() {
                     skills the rest of my time at Cal Poly.</p> 
                 </div>
             </div>
-            {/* <footer className="footer">
-                © 2023 Xavier's Personal Website | All Rights Reserved
-            </footer> */}
 		</div>
         ) 
 }
