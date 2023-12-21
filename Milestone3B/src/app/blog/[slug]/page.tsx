@@ -1,6 +1,4 @@
 import React from "react";
-import Link from "next/link"
-import Image from "next/image"
 import connectDB from "../../helpers/db";
 import Blog from "../../database/blogSchema"
 import style from "../../components/blogPreview.module.css";
@@ -8,12 +6,12 @@ import commentStyle from "../../components/comments.module.css"
 import '../../globals.css';
 import Comment from "../../components/comments";
 import moment from 'moment';
-import { NextRequest, NextResponse } from 'next/server';
+import WriteComment from "./writeComment";
 
 type IParams = {
-		params: {
-			slug: string;
-		};
+	params: {
+		slug: string;
+	};
 }
 
 type IComment = {
@@ -23,11 +21,11 @@ type IComment = {
 }
 
 
-
-async function getBlogPosts(slug: string){
+async function getBlogPosts(slug: string) {
 	await connectDB()
 	try {
       const blogPost = await Blog.findOne({ slug }).orFail()
+		// console.log("here:", blogPost._id);
 	    return blogPost
 	} catch (err) {
       console.error("Error Getting Data From DB: ", err);
@@ -37,7 +35,7 @@ async function getBlogPosts(slug: string){
 
 
 // convert Date into readable words
-function parseDateTime(time: Date){
+function parseDateTime(time: Date) {
 	return moment(time).format('MMMM Do YYYY, h:mm:ss a');
 }
 
@@ -60,6 +58,7 @@ async function BlogPost ({ params }: { params: { slug: string } }) {
 		</div>
 		<div className={commentStyle.commentBlock}>
 			<strong>Comments</strong>
+			<WriteComment slug={params.slug}/>
 			{blogPost.comments.map((icomment: IComment /*{ user: string; comment: string; time: Date; }*/, index: React.Key | null | undefined) => (
 	            <Comment key={index} comment = {icomment}/>
 	        ))}

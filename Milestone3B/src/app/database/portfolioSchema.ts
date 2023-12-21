@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
-// type IComment = {
-//     user: string;
-//     comment: string;
-//     time: Date;
-// }
+type IComment = {
+    user: string;
+    comment: string;
+    time: Date;
+}
 
 // typescript type (can also be an interface)
 type Portfolio = {
@@ -15,7 +15,7 @@ type Portfolio = {
     image: string;
     width: string;
     height: string;
-    //comments: IComment[]; // array for comments
+    comments: IComment[]; // array for comments
 };
 
 
@@ -27,12 +27,11 @@ const portfolioSchema = new Schema<Portfolio>({
     image: { type: String, required: true },
     width: { type: String, required: true},
     height: { type: String, required: true},
-
-// comments: {
-//     user: {type: String, required: true},
-//     comment: {type: String, required: true},
-//     time: {type: Date, required: false, default: new Date()}
-// }
+    comments: [{
+        user: {type: String, required: true},
+        comment: {type: String, required: true},
+        time: {type: Date, required: false, default: new Date()}
+    }]
 })
 
 // defining the collection and model
