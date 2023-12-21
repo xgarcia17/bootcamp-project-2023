@@ -6,7 +6,6 @@ import connectDB from "../../../../helpers/db";
 
 
 export async function POST(req: NextRequest) {
-	// const body = req.body
     const body = await req.json();
     console.log(body);
 	// validate body
@@ -14,10 +13,8 @@ export async function POST(req: NextRequest) {
 		return NextResponse.json("Blog body not found");
 	}
     const BlogSlug = body.slug; /*the blog slug from the request params*/
-    // const BlogSlug = "blog1"
 
 	// push comment object to document
-	// Blog.update(...)
     await connectDB();
     try {
         const blogPost = await Blog.findOne(BlogSlug).orFail()
@@ -27,31 +24,7 @@ export async function POST(req: NextRequest) {
         const newComment = { user, comment, time };
         blogPost.comments.push(newComment);
 
-        // try {
-        //     await Blog.updateOne(
-        //         { BlogSlug },
-        //         { $push: {comments: newComment }
-        //     });
-        // } catch (err) {
-        //     console.log(err);
-        //     return NextResponse.json("could not add comment");
-        // }  
-        // try {      
-        //     blogPost.comments.collection.update({
-        //         $push: {comments: {
-        //             // user: body.user,
-        //             // comment: body.comment,
-        //             // time: new Date()
-        //             newComment
-        //         }}
-        //     });
-        // } catch (err) {
-        //     console.log(err);
-        //     return NextResponse.json("could not add comment");
-        // }
-
         await blogPost.save();
-        console.log("made it!")
 
         return NextResponse.json("Comment added", { status: 200 });
     } catch (err) {

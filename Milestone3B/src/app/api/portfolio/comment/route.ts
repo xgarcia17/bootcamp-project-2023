@@ -6,25 +6,27 @@ import connectDB from "../../../helpers/db";
 
 
 export async function POST(req: NextRequest) {
-	// const body = req.body
     const body = await req.json();
+    console.log(body);
 	// validate body
 	if (body == null) {
-		return NextResponse.json("Portfolio body not found");
+		return NextResponse.json("Blog body not found");
 	}
-    const PortfolioSlug = body.slug; /*the portfolio slug from the request params*/
+    const PortSlug = body.slug; /*the blog slug from the request params*/
+
 	// push comment object to document
-	// Blog.update(...)
     await connectDB();
     try {
-        const portPost = await Portfolio.findOne({ PortfolioSlug }).orFail()
-        portPost.collection.update({
-            $push: {"comments": {
-                user: body.user,
-                comment: body.comment,
-                time: new Date()
-            }}
-        });
+        const portPost = await Portfolio.findOne(PortSlug).orFail()
+        const user = String(body.user);
+        const comment = String(body.comment);
+        const time = new Date();
+        const newComment = { user, comment, time };
+        portPost.comments.push(newComment);
+
+        await portPost.save();
+
+        return NextResponse.json("Comment added", { status: 200 });
     } catch (err) {
         console.error("Error Getting Data From DB: ", err);
         return null;

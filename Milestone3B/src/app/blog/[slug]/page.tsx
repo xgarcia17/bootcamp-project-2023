@@ -6,13 +6,8 @@ import commentStyle from "../../components/comments.module.css"
 import '../../globals.css';
 import Comment from "../../components/comments";
 import moment from 'moment';
-import WriteComment from "./writeComment";
+import WriteComment from "../../components/writeComment";
 
-type IParams = {
-	params: {
-		slug: string;
-	};
-}
 
 type IComment = {
     user: string;
@@ -42,7 +37,6 @@ function parseDateTime(time: Date) {
 
 async function BlogPost ({ params }: { params: { slug: string } }) {
 	const blogPost = await getBlogPosts(params.slug);
-  
 	if (!blogPost) {
 	  return <p>The blog post was not found</p>;
 	}
@@ -59,7 +53,7 @@ async function BlogPost ({ params }: { params: { slug: string } }) {
 		<div className={commentStyle.commentBlock}>
 			<strong>Comments</strong>
 			<WriteComment slug={params.slug}/>
-			{blogPost.comments.map((icomment: IComment /*{ user: string; comment: string; time: Date; }*/, index: React.Key | null | undefined) => (
+			{blogPost.comments.map((icomment: IComment, index: React.Key | null | undefined) => (
 	            <Comment key={index} comment = {icomment}/>
 	        ))}
 		</div>

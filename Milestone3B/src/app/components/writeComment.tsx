@@ -6,17 +6,27 @@ export default function writeComment(slug: any) {
 	// const [post, sendPost] = useState(0);
     const [comment, setComment] = useState("");
     const [user, setUser] = useState("");
+    let url;
+    const subSlug = String(slug.slug).substring(0,4);
 
     const handleComment = (event: any) => {
         event.preventDefault();
         const params = { user, comment, slug }; 
-        fetch("http://localhost:3000/api/blog/blogSlug/comment", {
+        if (subSlug === "blog") {
+            console.log("blog = ", subSlug);
+            url = "http://localhost:3000/api/blog/blogSlug/comment";
+        } else {
+            console.log("not blog");
+            url = "http://localhost:3000/api/portfolio/comment"
+        }
+        console.log("got past that part");
+        fetch(url, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(params)
         }).then(() => {
-            console.log("booyah");
-            event.reset();
+            // console.log("booyah");
+            // event.reset();
         });
     }
     const handleChangeComment = (event: any) => { setComment(event.target.value); }
