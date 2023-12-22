@@ -1,6 +1,6 @@
 // db.ts
 import mongoose from "mongoose";
-// const url: string = process.env.MONGO_URI as string;
+const url: string = process.env.MONGO_URI as string;
 let connection: typeof mongoose;
 
 /**
@@ -10,8 +10,8 @@ let connection: typeof mongoose;
  */
 const connectDB = async () => {
   if (!connection) {
-    // connection = await mongoose.connect(url);
-    connection = await mongoose.connect(String(process.env.MONGO_URI));
+    connection = await mongoose.connect(url);
+    // connection = await mongoose.connect(String(process.env.MONGO_URI));
     return connection;
   }
 };
