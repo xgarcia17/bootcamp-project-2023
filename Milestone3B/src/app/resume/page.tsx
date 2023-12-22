@@ -4,8 +4,6 @@ import Link from 'next/link'
 import '../globals.css'
 
 
-
-//<a className={style.resumedownload} href="../../public/resume.pdf" download>Download Resume</a>
 export default function Resume() {
     return (<div className='pageFormatting'>
             <main>

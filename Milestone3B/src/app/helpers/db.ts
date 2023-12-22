@@ -12,7 +12,6 @@ const connectDB = async () => {
   if (!connection) {
     console.log(typeof(url), url);
     connection = await mongoose.connect(url);
-    // connection = await mongoose.connect(String(process.env.MONGO_URI));
     return connection;
   }
 };

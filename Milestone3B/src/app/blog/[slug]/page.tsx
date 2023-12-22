@@ -19,7 +19,6 @@ async function getBlogPosts(slug: string) {
 	await connectDB()
 	try {
       const blogPost = await Blog.findOne({ slug }).orFail()
-		// console.log("here:", blogPost._id);
 	    return blogPost
 	} catch (err) {
       console.error("Error Getting Data From DB: ", err);

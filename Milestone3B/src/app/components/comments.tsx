@@ -11,17 +11,13 @@ type IComment = {
     time: Date;
 }
 
-
 type CommentProps = {
     comment: IComment;
 }
 
-
 {/* Modularizing code into seperate functions is useful.
 		Makes your code look nicer and allows for better readability.
 	*/}
-
-
 
 // convert Date into readable words
 function parseCommentTime(time: Date){

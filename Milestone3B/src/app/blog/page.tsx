@@ -13,8 +13,6 @@ async function getBlogs(){
 	try {
 			// query for all blogs and sort by date
 	    const blogs = await Blog.find().sort({ date: -1 }).orFail();
-      //const blogs = await blogSchema.find({}).orFail();
-
 			// send a response as the blogs as the message
 	    return blogs;
 	} catch (err) {

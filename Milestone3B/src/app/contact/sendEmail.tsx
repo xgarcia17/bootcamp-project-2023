@@ -15,8 +15,6 @@ export default function ContactUs() {
     }
     console.log("sendEmail");
     event.preventDefault();
-    // const attachedMessage = from_name + " has contacted you through the 'Contact' page.\nHere is their message:\n\n" 
-    //                     + message;
     const params = {
         from_name: from_name,
         email: email,
@@ -27,7 +25,6 @@ export default function ContactUs() {
     if (success) {
         emailjs.send('service_8a8amx8', 'template_vnvnbec', params, '5D4T4q9kQsRghYvkH')
         .then((result) => {
-            //   window.location.reload();
             setEmail("");
             setFromName("");
             setMessage("");

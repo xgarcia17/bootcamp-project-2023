@@ -1,8 +1,3 @@
-// You can name the function within page.tsx anything you want.
-//<Image src={'/Screenshot 2023-11-04 234745.png'} height={300} width={200} alt='Xavier at one of the Kaumana Caves of Hawaii in the summer of 2022.'></Image>
-
-//import Image from 'next' was not working for me
-
 import style from './home/home.module.css'
 import './globals.css'
 import Image from 'next/image'
