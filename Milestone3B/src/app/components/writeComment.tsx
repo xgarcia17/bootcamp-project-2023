@@ -13,10 +13,10 @@ export default function WriteComment(slug: any) {
         const params = { user, comment, slug }; 
         if (subSlug === "blog") {
             console.log("blog = ", subSlug);
-            url = "http://localhost:3000/api/blog/blogSlug/comment";
+            url = "/api/blog/blogSlug/comment";
         } else {
             console.log("not blog");
-            url = "http://localhost:3000/api/portfolio/comment"
+            url = "/api/portfolio/comment"
         }
         console.log("got past that part");
         fetch(url, {
