@@ -8,7 +8,6 @@ import Comment from "../../components/comments";
 import moment from 'moment';
 import WriteComment from "../../components/writeComment";
 
-
 type IComment = {
     user: string;
     comment: string;

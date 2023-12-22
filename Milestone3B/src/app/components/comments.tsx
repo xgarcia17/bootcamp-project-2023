@@ -30,17 +30,15 @@ function parseCommentTime(time: Date){
 
 
 function Comment({comment}: CommentProps) {
-// function Comment(comment: IComment) {
-
     return (
         <div className={style.commentPostBlock}>
-        <div className={style.commentPost}>
-            <div className={style.commentHeader}>
-                <h4 className={style.commentUser}>{comment.user}</h4>
-                <h4 className={style.commentTime}>{parseCommentTime(comment.time)}</h4>
+            <div className={style.commentPost}>
+                <div className={style.commentHeader}>
+                    <h4 className={style.commentUser}>{comment.user}</h4>
+                    <h4 className={style.commentTime}>{parseCommentTime(comment.time)}</h4>
+                </div>
+                <p className={style.commentContent}>{comment.comment}</p>
             </div>
-            <p className={style.commentContent}>{comment.comment}</p>
-        </div>
         </div>
     );
 }

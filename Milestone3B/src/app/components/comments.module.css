@@ -42,21 +42,21 @@
     }
 
     .commentUser {
-        display: inline;
+        /* display: inline; */
         font-size: 0.8em;
         font-style: oblique;
-        float: left
+        float: left;
     }
 
     .commentTime {
-        display: inline;
+        /* display: inline; */
         font-size: 0.8em;
-        float: right;        
+        float: right;
     }
 
     .commentContent {
         overflow-wrap: break-word;
         font-size: 0.8em;
-        padding-left: 10px;
         padding-right: 10px;
+        text-align: left;
     }

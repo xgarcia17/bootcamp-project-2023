@@ -3,7 +3,6 @@ import React, { useState } from "react"
 
 
 export default function writeComment(slug: any) {
-	// const [post, sendPost] = useState(0);
     const [comment, setComment] = useState("");
     const [user, setUser] = useState("");
     let url;
@@ -24,10 +23,10 @@ export default function writeComment(slug: any) {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(params)
-        }).then(() => {
-            // console.log("booyah");
-            // event.reset();
         });
+        setComment("");
+        setUser("");
+        window.location.reload();
     }
     const handleChangeComment = (event: any) => { setComment(event.target.value); }
     const handleChangeUser = (event: any) => { setUser(event.target.value); }
@@ -36,10 +35,10 @@ export default function writeComment(slug: any) {
 		<div>
             <form id="commentForm" onSubmit={handleComment}>
             <label htmlFor="username">Username: 
-            <input required value={user} onChange={handleChangeUser} id="username"/>
+            <input required value={user} onChange={handleChangeUser} id="username" className="usernameEntry"/>
             </label>
             <label htmlFor="comment">Comment:
-            <textarea required value={comment} onChange={handleChangeComment} id="comment"/>
+            <textarea required value={comment} onChange={handleChangeComment} id="comment" className="commentEntry"/>
             </label>
             <button type="submit">Post Comment</button>
             </form>

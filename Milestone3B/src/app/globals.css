@@ -160,7 +160,7 @@
   
   input[type="text"],
   input[type="email"],
-  textarea {
+  .contactTextArea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -169,6 +169,26 @@
     font-size: 16px;
     resize: none;
     border: 5px solid var(--cg-grey-green);
+    border-radius: 5px;
+  }
+
+  .commentEntry {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: -10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    border: 5px solid var(--cg-grey-green);
+    border-radius: 5px;
+  }
+  
+  .usernameEntry {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    border: 3px solid var(--cg-grey-green);
     border-radius: 5px;
   }
   
