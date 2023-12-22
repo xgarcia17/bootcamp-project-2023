@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 
-export default function writeComment(slug: any) {
+export default function WriteComment(slug: any) {
     const [comment, setComment] = useState("");
     const [user, setUser] = useState("");
     let url;
