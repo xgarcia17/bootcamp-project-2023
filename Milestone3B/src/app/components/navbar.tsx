@@ -6,10 +6,9 @@ export default function Navbar() {
   return (
     // replace everything in between the <header> & <header /> tags
     // with your navbar code from your earlier milestones
-    //<h1> Xavier's Personal Website </h1>
     <header className={style.navbar} >
       <nav>
-        <h1 className={style.logo}><Link href="http://localhost:3000/">Xavier&apos;s Personal Website</Link></h1>
+        <h1 className={style.logo}><Link href="https://xaviers-personal-website-gf35kvjry-xgarcia17s-projects.vercel.app/">Xavier&apos;s Personal Website</Link></h1>
             <ul className={style.navlist}>
                 <Link href="https://xaviers-personal-website-gf35kvjry-xgarcia17s-projects.vercel.app/">Home</Link>
                 <Link href="https://xaviers-personal-website-gf35kvjry-xgarcia17s-projects.vercel.app/blog">Blogs</Link>
