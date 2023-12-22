@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json("Comment added", { status: 200 });
     } catch (err) {
         console.error("Error Getting Data From DB: ", err);
-        return null;
+        return NextResponse.json("Error -> Null");
     }
     
 }
