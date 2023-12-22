@@ -9,7 +9,7 @@ export default function Navbar() {
     //<h1> Xavier's Personal Website </h1>
     <header className={style.navbar} >
       <nav>
-        <h1 className={style.logo}><Link href="http://localhost:3000/">Xavier's Personal Website</Link></h1>
+        <h1 className={style.logo}><Link href="http://localhost:3000/">Xavier&apos;s Personal Website</Link></h1>
             <ul className={style.navlist}>
                 <Link href="http://localhost:3000/">Home</Link>
                 <Link href="http://localhost:3000/blog">Blogs</Link>

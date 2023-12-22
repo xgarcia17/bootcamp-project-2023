@@ -7,7 +7,7 @@ export default function Footer() {
     <>
     <div className={style.footer}>
       <footer>
-        © 2023 Xavier's Personal Website | All Rights Reserved
+        © 2023 Xavier&apos;s Personal Website | All Rights Reserved
       </footer>
     </div>
     </>
