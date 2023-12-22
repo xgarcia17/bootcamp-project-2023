@@ -11,11 +11,16 @@ export default function Navbar() {
       <nav>
         <h1 className={style.logo}><Link href="http://localhost:3000/">Xavier&apos;s Personal Website</Link></h1>
             <ul className={style.navlist}>
-                <Link href="http://localhost:3000/">Home</Link>
-                <Link href="http://localhost:3000/blog">Blogs</Link>
-                <Link href="http://localhost:3000/portfolio">Portfolio</Link>
-                <Link href="http://localhost:3000/resume">Resume</Link>
-                <Link href="http://localhost:3000/contact">Contact</Link>
+                <Link href="https://xaviers-personal-website-gf35kvjry-xgarcia17s-projects.vercel.app/">Home</Link>
+                <Link href="https://xaviers-personal-website-gf35kvjry-xgarcia17s-projects.vercel.app/blog">Blogs</Link>
+                <Link href="https://xaviers-personal-website-gf35kvjry-xgarcia17s-projects.vercel.app/portfolio">Portfolio</Link>
+                <Link href="https://xaviers-personal-website-gf35kvjry-xgarcia17s-projects.vercel.app/resume">Resume</Link>
+                <Link href="https://xaviers-personal-website-gf35kvjry-xgarcia17s-projects.vercel.app/contact">Contact</Link>
+                {/* <Link href="http://localhost:3000/">Home</Link> */}
+                {/* <Link href="http://localhost:3000/blog">Blogs</Link> */}
+                {/* <Link href="http://localhost:3000/portfolio">Portfolio</Link> */}
+                {/* <Link href="http://localhost:3000/resume">Resume</Link> */}
+                {/* <Link href="http://localhost:3000/contact">Contact</Link> */}
             </ul>
       </nav>
     </header>
