@@ -16,7 +16,7 @@ export default function Resume() {
                     <h1 className={style.sectiontitle}>Education</h1>
                     <div className={style.entry}>
                         <h3 className={style.entrytitle}>Bachelor of Science in Computer Science</h3>
-                        <p className={style.entryinfo}>California Polytechnic State University, San Luis Obispo, California  |  Expected Graduation: June 2025  |  GPA: 3.51</p>
+                        <p className={style.entryinfo}>California Polytechnic State University, San Luis Obispo, California  |  Expected Graduation: June 2025  |  GPA: 3.59</p>
                         <h3 className={style.entrytitle}>Awards</h3>
                         <ul className="awards-list">
                             <li>Cal Poly Dean&apos;s List: Fall 2021, Winter 2022, Fall 2022, Winter 2023, Spring 2023</li>
@@ -28,8 +28,8 @@ export default function Resume() {
                 <section className={style.section}>
                     <h1 className={style.sectiontitle}>Skills</h1>
                     <ul className="skill-list">
-                        <li><strong>Programming Languages:</strong> Python, C, Java, HTML, CSS, RISC-V ASM, MIPS</li>
-                        <li><strong>Programs and Applications:</strong> Visual Studio Code, IntelliJ Idea, PyCharm, Sublime Text, GitHub, Command Prompt, Microsoft Suite, Google Suite</li>
+                        <li><strong>Programming Languages:</strong> Python, C, Java, TypeScript, Next.js, Node.js, React, HTML, CSS, RISC-V ASM, MIPS</li>
+                        <li><strong>Programs and Applications:</strong> Visual Studio Code, IntelliJ Idea, PyCharm, Sublime Text, GitHub, XUbuntu, Command Prompt, Microsoft Suite, Google Suite</li>
                     </ul>
                 </section>
                 <section className={style.section}>
