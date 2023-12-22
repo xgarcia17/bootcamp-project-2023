@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
-import Comment from "../components/comments";
+import IComment from "../components/comments";
 
 
 type IComment = {
@@ -21,12 +21,6 @@ type IBlog = {
 };
 
 
-// const commentSchema = new Schema<IComment>({
-//     user: { type: String, required: true },
-//     comment: { type: String, required: true },
-//     time: { type: Date, required: true }
-// })
-
 // mongoose schema 
 const blogSchema = new Schema<IBlog>({
     title: { type: String, required: true },
@@ -39,19 +33,6 @@ const blogSchema = new Schema<IBlog>({
         comment: { type: String, required: true },
         time: {type: Date, required: true, default: new Date() }
     }]
-    //{ type: [commentSchema] }
-    //[commentSchema]
-    //{ type: IComment[] }
-    //{ type: IComment[] }
-    //{ type: commentSchema[]}
-
-
-
-    // {
-    //    user: {type: String, required: true}},
-    //    {comment: {type: String, required: true}},
-    //    {time: {type: Date, required: false, default: new Date()}
-    // }
 })
 
 // defining the collection and model
