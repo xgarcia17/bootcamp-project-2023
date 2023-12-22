@@ -7,12 +7,6 @@ import '../globals.css'
 import moment from 'moment';
 
 
-type IParams = {
-    params: {
-        slug: string
-    }
-}
-
 async function getBlogs(){
 	await connectDB() // function from db.ts before
 
