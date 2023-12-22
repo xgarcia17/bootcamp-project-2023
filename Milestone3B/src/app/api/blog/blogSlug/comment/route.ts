@@ -3,8 +3,6 @@ import Blog from "@/app/database/blogSchema";
 import connectDB from "../../../../helpers/db";
 
 
-
-
 export async function POST(req: NextRequest) {
     const body = await req.json();
     console.log(body);

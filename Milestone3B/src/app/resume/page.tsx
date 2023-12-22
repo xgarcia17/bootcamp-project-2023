@@ -21,8 +21,8 @@ export default function Resume() {
                         <p className={style.entryinfo}>California Polytechnic State University, San Luis Obispo, California  |  Expected Graduation: June 2025  |  GPA: 3.51</p>
                         <h3 className={style.entrytitle}>Awards</h3>
                         <ul className="awards-list">
-                            <li>Cal Poly Dean's List: Fall 2021, Winter 2022, Fall 2022, Winter 2023, Spring 2023</li>
-                            <li>President's Honors List 2022-23</li>
+                            <li>Cal Poly Dean&apos;s List: Fall 2021, Winter 2022, Fall 2022, Winter 2023, Spring 2023</li>
+                            <li>President&apos;s Honors List 2022-23</li>
                             <li>Cal Poly Merit Scholarship 2021, 2022, 2023</li>
                         </ul>
                     </div>
@@ -65,7 +65,7 @@ export default function Resume() {
                 <section className={style.section}>
                     <h1 className ={style.sectiontitle}>Experience</h1>
                     <div className={style.entry}>
-                        <p className={style.entrytitle}><strong>Involvements:</strong> Cal Poly Supplemental Workshops, Cross Cultural Experience Orientation Program, Multiracial Students' Association, Pilipino Cultural Exchange, Society of Hispanic Professional Engineers, Chinese Student Association</p>
+                        <p className={style.entrytitle}><strong>Involvements:</strong> Cal Poly Supplemental Workshops, Cross Cultural Experience Orientation Program, Multiracial Students&apos; Association, Pilipino Cultural Exchange, Society of Hispanic Professional Engineers, Chinese Student Association</p>
                         <h3 className={style.entrytitle}>Developer</h3>
                         <p className={style.entryinfo}><em>Hack4Impact</em>, Cal Poly  |  October 2023 - Present</p>
                         <p className={style.entrydescription}>-Work with a team of developers to create software according to client specifications and requirements
@@ -74,11 +74,11 @@ export default function Resume() {
                         </p>
                         <h3 className={style.entrytitle}>Workshop Facilitator</h3>
                         <p className={style.entryinfo}><em>Academic Skills Center</em>, Cal Poly  |  September 2023 - Present</p>
-                        <p className={style.entrydescription}>-Work with professors and other student leaders to develop activities synchronous with course curriculum to enhance students' abilities in Calculus
+                        <p className={style.entrydescription}>-Work with professors and other student leaders to develop activities synchronous with course curriculum to enhance students&apos; abilities in Calculus
                             <br></br>-Facilitate lesson plans and group discussions to foster a collaborative learning environment for students of various backgrounds and skills
                         </p>
                         <h3 className={style.entrytitle}>Social Affairs Officer, Current Events Officer</h3>
-                        <p className={style.entryinfo}><em>Multiracial Students' Association</em>, Cal Poly  |  December 2021 - June 2023</p>
+                        <p className={style.entryinfo}><em>Multiracial Students&apos; Association</em>, Cal Poly  |  December 2021 - June 2023</p>
                         <p className={style.entrydescription}>-Invented and designed the <em>Multiracial Spotlight</em> series both on Instagram and during general club meetings consisting of in-depth segments on well-known people of interest
                             <br></br>-Run the club Instagram account
                             <br></br>-Present informative news segments at general meetings pertaining to the San Luis Obispo region
